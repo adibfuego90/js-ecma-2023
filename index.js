@@ -12,7 +12,7 @@ console.log(reversedArray);
 console.log(arr); //main array is not muted because of using to.Reversed method
  */
 
-/* -----------------*----------------------------- */
+/* ----------------- * ----------------------------- */
 /* 
 // New Feature 02 : array.toSpliced()
 // original array
@@ -29,7 +29,7 @@ console.log(newArray);
 console.log(arr);
  */
 
-/* ---------------*---------------------- */
+/* ------------------ * ---------------------- */
 
 /* 
 // New Feature 03 : array.with()
@@ -42,3 +42,57 @@ const result = arr.with(2, 333);
 console.log(result);
 console.log(arr); //not muted of using with() method ;
  */
+
+/* ------------------ * ---------------------- */
+
+// new feature -04 : array.toSort()
+
+// const arr = [1, 23, 34, 1, 2, 4, 5, 1, 1];
+
+/* // array.sort() method sort using string not number
+const compare = function (a, b) {
+  return a - b;
+};
+const sortedArray = arr.sort(compare);
+console.log(sortedArray);
+console.log(arr); //muted of using sort() method
+ */
+
+const cars = [
+  {
+    type: "volvo",
+    year: 2016,
+  },
+  {
+    type: "MS",
+    year: 2012,
+  },
+  {
+    type: "BS",
+    year: 2010,
+  },
+];
+
+const result = cars.sort(function (a, b) {
+  // return a.year - b.year;  //for sort with number
+  // to sort with string
+
+  const x = a.type.toLowerCase();
+  const y = b.type.toLowerCase();
+
+  if (x < y) {
+    return -1;
+  } else if (x > y) {
+    return 1;
+  } else {
+    return 0;
+  }
+});
+console.log(result);
+
+// if we want to not muted our main array we have to use toSorted() method
+
+const arrMain = [12, 23, 34, 1, 2, 4, 5, 2];
+const resultMain = arrMain.toSorted();
+console.log(resultMain);
+console.log(arrMain);
